@@ -1,0 +1,5 @@
+RW1
+iid_time
+besag
+iid_space
+type4

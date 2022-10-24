@@ -1,0 +1,13 @@
+mpirun -np 6 --map-by socket:PE=${OMP_NUM_THREADS} --report-bindings ./myfood 
+
+
+
+ccache mpicxx -std=c++14 -O3 -DNDEBUG -mavx -pthread -fopenmp -c main_mpi.cpp GLP/GLP-Data/GLP_Data.cpp GLP/GLP-DisUtensils/GLP_DisUtensils.cpp GLP/GLP-Functions/GLP_functions.cpp GLP/GLP-Libraries/GLP_libraries.cpp GLP/GLP-Libraries/GLP_splines.cpp GLP/GLP-Priors/GLP_Priors.cpp GLP/GLP-Recipes/GLP_Recipes.cpp -I/usr/local/include/blaze -I/usr/local/include/boost -I/usr/local/include/eigen3 
+ccache mpicxx -std=c++14 -O3 -DNDEBUG -mavx -pthread -fopenmp *.o -o myfood -L/usr/local/include/boost/stage/lib -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lgomp -lm -ldl -lmpi -lstdc++ -lboost_serialization -lboost_mpi -llapack -Wl,--start-group /home/abdulfe/sys/MKL/libmkl_intel_lp64.a /home/abdulfe/sys/MKL/libmkl_gnu_thread.a /home/abdulfe/sys/MKL/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl
+
+
+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
+
+
+
+
