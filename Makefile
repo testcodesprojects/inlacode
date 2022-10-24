@@ -1,5 +1,5 @@
 CXX=mpicxx
-MKLPATH=/opt/intel/oneapi/mkl/2022.0.2/lib/intel64/
+MKLPATH=/opt/intel/oneapi/mkl/latest/lib/intel64/
 INC=-I/usr/local/include/blaze -I/software/boost -I/usr/local/include/eigen3 
 SRC=main_mpi.cpp GLP/GLP-Libraries/GLP_libraries.cpp GLP/GLP-Functions/GLP_functions.cpp GLP/GLP-Data/GLP_Data.cpp GLP/GLP-Libraries/GLP_splines.cpp GLP/GLP-DisUtensils/GLP_DisUtensils.cpp GLP/GLP-Recipes/GLP_Recipes.cpp
 OBJ=*.o
