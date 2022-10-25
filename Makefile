@@ -7,7 +7,7 @@ MKLPATH = /opt/intel/oneapi/mkl/latest/lib/intel64
 MKLINK= -Wl,--start-group $(MKLPATH)/libmkl_intel_lp64.a $(MKLPATH)/libmkl_gnu_thread.a $(MKLPATH)/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl
 LDFLAGS=-L/software/boost/stage/lib
 LIBS= -lstdc++ -lboost_serialization -lboost_mpi
-EXE=myfood
+EXE=output_mpi_mkl
 all: inlaplus.o inlaplus.exe
 
 inlaplus.exe:
