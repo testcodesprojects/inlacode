@@ -6,7 +6,7 @@ CXXFLAGS=-std=c++14 -O3 -DNDEBUG -mavx -pthread -fopenmp
 MKLPATH = /opt/intel/oneapi/mkl/latest/lib/intel64/
 MKLINK= -Wl,--start-group $(MKLPATH)/libmkl_intel_lp64.a $(MKLPATH)/libmkl_gnu_thread.a $(MKLPATH)/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl
 LDFLAGS=-L/usr/local/include/boost/stage/lib
-LIBS= -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lgomp -lm -ldl -lmpi -lstdc++ -lboost_serialization -lboost_mpi -llapack
+LIBS= -lstdc++ -lboost_serialization -lboost_mpi
 EXE=myfood
 all: inlaplus.o inlaplus.exe
 
@@ -16,4 +16,3 @@ inlaplus.o:
 	$(CXX) $(CXXFLAGS) -c $(SRC) $(INC)
 clean:
 	rm $(OBJ) $(EXE)
-
