@@ -5,7 +5,7 @@ OBJ=*.o
 CXXFLAGS=-std=c++14 -O3 -DNDEBUG -mavx -pthread -fopenmp
 MKLPATH = /opt/intel/oneapi/mkl/latest/lib/intel64
 MKLINK= -Wl,--start-group $(MKLPATH)/libmkl_intel_lp64.a $(MKLPATH)/libmkl_gnu_thread.a $(MKLPATH)/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl
-LDFLAGS=-L/usr/local/include/boost/stage/lib
+LDFLAGS=-L/software/boost/stage/lib
 LIBS= -lstdc++ -lboost_serialization -lboost_mpi
 EXE=myfood
 all: inlaplus.o inlaplus.exe
